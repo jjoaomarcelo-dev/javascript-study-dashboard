@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Study Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="cartao">
+        <header>
+            <p class="marca"><span aria-hidden="true">JS</span> Meu espaço de estudos</p>
+            <h1>JavaScript Study Dashboard</h1>
+            <p>Projeto pessoal para registrar meus estudos e acompanhar minha evolução em JavaScript.</p>
+        </header>
+
+        <section class="formulario" aria-labelledby="titulo-formulario">
+            <div class="cabecalho-secao">
+                <h2 id="titulo-formulario">Registrar estudo</h2>
+                <p class="descricao-secao">Registro de estudos por tipo, tema, duração, data e status.</p>
+            </div>
+
+            <div class="campoForm campo-titulo">
+                <label for="f_titulo">Título</label>
+                <input type="text" name="titulo" id="f_titulo" placeholder="Ex.: Aula sobre objetos">
+            </div>
+
+            <div class="campoForm">
+                <label for="f_tipo">Tipo</label>
+                <select name="tipo" id="f_tipo">
+                    <option value="">Selecione o tipo</option>
+                    <option value="aula">Aula</option>
+                    <option value="exercicio">Exercício</option>
+                    <option value="projeto">Projeto</option>
+                </select>
+            </div>
+
+            <div class="campoForm">
+                <label for="f_tema">Tema estudado</label>
+                <input type="text" name="tema" id="f_tema" placeholder="Ex.: Objetos e arrays">
+            </div>
+
+            <div class="campoForm">
+                <label for="f_tempo">Tempo estudado (minutos)</label>
+                <input type="number" name="tempo" id="f_tempo" placeholder="Ex.: 30" min="1" step="1">
+            </div>
+
+            <div class="campoForm">
+                <label for="f_data">Data do estudo</label>
+                <input type="date" name="data" id="f_data">
+            </div>
+
+            <div class="campoForm">
+                <label for="f_status">Status</label>
+                <select name="status" id="f_status">
+                    <option value="pendente">Pendente</option>
+                    <option value="concluido">Concluído</option>
+                </select>
+            </div>
+
+            <button type="button" id="btnAdicionar">Adicionar estudo</button>
+        </section>
+
+        <section class="resultado" aria-live="polite" aria-labelledby="titulo-resultado">
+            <div class="cabecalho-secao">
+                <h2 id="titulo-resultado">Meus estudos</h2>
+                <p class="descricao-secao">Histórico de aulas, exercícios e projetos estudados.</p>
+            </div>
+            <div class="res" id="listaEstudos">
+                <div class="estado-vazio">
+                    <strong>Nenhum estudo registrado ainda.</strong>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
