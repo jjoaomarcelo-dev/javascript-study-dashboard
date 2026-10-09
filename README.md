@@ -2,11 +2,11 @@
 
 Projeto pessoal para registrar meus estudos e acompanhar minha evolução em JavaScript.
 
-A proposta é reunir aulas, exercícios e projetos em um painel com informações sobre tema estudado, tempo dedicado, data e status. O desenvolvimento acontece por etapas, acompanhando meu aprendizado e aplicando os conceitos na prática.
+Estou desenvolvendo esse dashboard enquanto estudo, para praticar o que aprendo e reunir minhas aulas, exercícios e pequenos projetos em um só lugar. A ideia é que, com o tempo, também seja possível acessar o código dos exercícios e testá-los no navegador.
 
 ## Status do projeto
 
-Em desenvolvimento. A estrutura HTML e o layout responsivo estão implementados. O cadastro e as demais funcionalidades em JavaScript ainda serão desenvolvidos.
+O projeto está no início. A estrutura da página e o layout responsivo estão prontos, com campos para título, tipo, tema, tempo estudado, data e status.
 
 ## Tecnologias
 
@@ -19,22 +19,23 @@ Em desenvolvimento. A estrutura HTML e o layout responsivo estão implementados.
 - [x] Estrutura inicial do painel
 - [x] Layout responsivo
 - [x] Campos para título, tipo, tema, duração, data e status
-- [ ] Validação dos campos
+- [ ] Leitura e validação dos campos
 - [ ] Cadastro e listagem de estudos
+- [ ] Armazenamento com localStorage
+- [ ] Edição e remoção de registros
 - [ ] Resumo de estudos concluídos, pendentes e tempo total
 - [ ] Filtros por tipo e status
 - [ ] Busca de estudos
-- [ ] Edição e remoção de registros
-- [ ] Armazenamento com localStorage
+- [ ] Exercícios associados às aulas, com links para o código e a execução
 
-Um cronômetro de estudos é uma possibilidade para uma etapa futura.
+Vou começar pelo cadastro e pela listagem. Os outros recursos serão adicionados depois que essa primeira versão estiver funcionando.
 
 ## Como executar
 
-1. Baixe o projeto ou clone o repositório.
+1. Baixe ou clone o repositório.
 2. Abra o arquivo `index.html` no navegador.
 
-Não é necessário instalar dependências. Neste momento, o painel apresenta apenas a interface; o botão de adicionar estudo ainda não realiza o cadastro.
+Não é necessário instalar dependências.
 
 ## Estrutura de arquivos
 
@@ -42,10 +43,10 @@ Não é necessário instalar dependências. Neste momento, o painel apresenta ap
 javascript-study-dashboard/
 ├── index.html   # Estrutura da página
 ├── style.css    # Estilos e responsividade
-├── script.js    # Lógica do painel (a desenvolver)
+├── script.js    # Lógica do painel
 └── README.md    # Documentação do projeto
 ```
 
 ## Objetivo de aprendizado
 
-Praticar manipulação do DOM, eventos, validações, funções, arrays e objetos, evoluindo para persistência de dados com localStorage. A prioridade é construir uma primeira versão funcional e compreender a lógica de cada etapa antes de adicionar novos recursos.
+Estou construindo o projeto por etapas para praticar JavaScript, com foco em funções, arrays, objetos, eventos e manipulação do DOM.
