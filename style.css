@@ -119,6 +119,11 @@ h2 {
     min-width: 0;
 }
 
+.campoForm span {
+    color: #b42318;
+    font-size: 0.875rem;
+}
+
 label {
     font-size: 0.8125rem;
     font-weight: 600;
