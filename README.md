@@ -26,7 +26,7 @@ Conforme avanço nos estudos, pretendo incorporar TypeScript, React e outras tec
 - [x] Layout responsivo
 - [x] Campos para título, tipo, tema, duração, data e status
 - [x] Leitura e validação dos campos
-- [ ] Cadastro e listagem de estudos
+- [x] Cadastro e listagem de estudos
 - [ ] Armazenamento com localStorage
 - [ ] Edição e remoção de registros
 - [ ] Resumo de estudos concluídos, pendentes e tempo total

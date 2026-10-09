@@ -52,7 +52,7 @@ const validarCampos = () => {
         erroTempo.textContent = "*Campo obrigatório"
         camposValidos = false
     } else if (Number(tempo) <= 0 || !Number.isInteger(Number(tempo))) {
-        erroTempo.textContent = "*Informe um tempo inteiro maior que zero."
+        erroTempo.textContent = "*Informe uma duração válida."
         camposValidos = false
     }
 
@@ -67,13 +67,91 @@ const validarCampos = () => {
     return camposValidos
 }
 
+const formatarTexto = (texto) => {
+    return texto
+        .trim()
+        .toLowerCase()
+        .split(/\s+/)
+        .map(palavra => palavra.charAt(0).toUpperCase() + palavra.slice(1))
+        .join(" ")
+}
+
+const exibirEstudos = () => {
+    listaEstudos.innerHTML = ""
+
+    estudos.forEach((estudo) => {
+
+        const dataFormatada = estudo.data
+            .split("-")
+            .reverse()
+            .join("/")
+
+        const statusFormatado = estudo.status === "concluido"
+            ? "Concluído"
+            : "Pendente"
+
+        const tipoFormatado = formatarTexto(estudo.tipo)
+
+        const estudoCard = document.createElement("div")
+        estudoCard.classList.add("estudo-card")
+
+        const estudoTitulo = document.createElement("h3")
+        estudoTitulo.textContent = estudo.titulo
+        estudoCard.append(estudoTitulo)
+
+        const estudoTipo = document.createElement("p")
+        estudoTipo.textContent = `Tipo: ${tipoFormatado}`
+        estudoCard.append(estudoTipo)
+
+        const estudoTema = document.createElement("p")
+        estudoTema.textContent = `Tema estudado: ${estudo.tema}`
+        estudoCard.append(estudoTema)
+
+        const estudoTempo = document.createElement("p")
+        estudoTempo.textContent = `Tempo estudado: ${estudo.tempo} minutos`
+        estudoCard.append(estudoTempo)
+
+        const estudoData = document.createElement("p")
+        estudoData.textContent = `Data do estudo: ${dataFormatada}`
+        estudoCard.append(estudoData)
+
+        const estudoStatus = document.createElement("p")
+        estudoStatus.textContent = `Status: ${statusFormatado}`
+        estudoCard.append(estudoStatus)
+
+        listaEstudos.append(estudoCard)
+    })
+}
+
+const limparCampos = () => {
+    f_titulo.value = ""
+    f_tipo.value = ""
+    f_tema.value = ""
+    f_tempo.value = ""
+    f_data.value = ""
+    f_status.value = "concluido"
+}
+
 btnAdicionar.addEventListener("click", () => {
     const camposValidos = validarCampos()
 
-    if (camposValidos === false) {
+    if (!camposValidos) {
         return
     }
 
-    alert("Tudo válido!")
+    const tituloFormatado = formatarTexto(f_titulo.value)
+    const temaFormatado = formatarTexto(f_tema.value)
 
+    const estudo = {
+        titulo: tituloFormatado,
+        tipo: f_tipo.value,
+        tema: temaFormatado,
+        tempo: Number(f_tempo.value),
+        data: f_data.value,
+        status: f_status.value
+    }
+
+    estudos.push(estudo)
+    exibirEstudos()
+    limparCampos()
 })
