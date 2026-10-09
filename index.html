@@ -25,6 +25,7 @@
             <div class="campoForm campo-titulo">
                 <label for="f_titulo">Título</label>
                 <input type="text" name="titulo" id="f_titulo" placeholder="Ex.: Aula sobre objetos">
+                <span id="erroTitulo" aria-live="polite"></span>
             </div>
 
             <div class="campoForm">
@@ -35,21 +36,25 @@
                     <option value="exercicio">Exercício</option>
                     <option value="projeto">Projeto</option>
                 </select>
+                <span id="erroTipo" aria-live="polite"></span>
             </div>
 
             <div class="campoForm">
                 <label for="f_tema">Tema estudado</label>
                 <input type="text" name="tema" id="f_tema" placeholder="Ex.: Objetos e arrays">
+                <span id="erroTema" aria-live="polite"></span>
             </div>
 
             <div class="campoForm">
                 <label for="f_tempo">Tempo estudado (minutos)</label>
                 <input type="number" name="tempo" id="f_tempo" placeholder="Ex.: 30" min="1" step="1">
+                <span id="erroTempo" aria-live="polite"></span>
             </div>
 
             <div class="campoForm">
                 <label for="f_data">Data do estudo</label>
                 <input type="date" name="data" id="f_data">
+                <span id="erroData" aria-live="polite"></span>
             </div>
 
             <div class="campoForm">
@@ -58,6 +63,7 @@
                     <option value="pendente">Pendente</option>
                     <option value="concluido">Concluído</option>
                 </select>
+                <span id="erroStatus" aria-live="polite"></span>
             </div>
 
             <button type="button" id="btnAdicionar">Adicionar estudo</button>
