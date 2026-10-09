@@ -122,6 +122,7 @@ h2 {
 .campoForm span {
     color: #b42318;
     font-size: 0.875rem;
+    font-style: italic;
 }
 
 label {
